@@ -107,7 +107,7 @@ def preprocess_data(new_data):
 # ------------------------
 # 2. 加载模型
 # ------------------------
-model = load('../../model/logistic_regression_model.joblib')
+model = load('../model/logistic_regression_model.joblib')
 
 
 # ------------------------

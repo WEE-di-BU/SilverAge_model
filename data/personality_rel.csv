@@ -1,0 +1,11 @@
+head,relation,tail
+id,advice,health_advice
+id,advice,special_management
+health_advice,include,diet_recommendations
+health_advice,include,exercise_recommendations
+health_advice,include,lifestyle_recommendations
+health_advice,include,sleep_tips
+special_management,include,diet_tips
+special_management,include,herbal_tea_suggestions
+special_management,include,weekly_diet_plan
+special_management,include,weekly_exercise_plan

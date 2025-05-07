@@ -3,7 +3,7 @@ import numpy as np
 from joblib import load
 
 # 加载模型
-model = load('../model/logistic_regression_model.joblib')
+model = load('./model/logistic_regression_model.joblib')
 
 # 数据预处理函数
 def preprocess_data(new_data):
@@ -13,8 +13,8 @@ def preprocess_data(new_data):
     # 1.1 基础数据处理
     df = new_data.copy()
 
-    # 1.2 转换年龄（天→年）
-    df['age'] = df['age']
+    # # 1.2 转换年龄（天→年）
+    # df['age'] = df['age']
 
     # 1.3 重命名列
     column_mapping = {
@@ -29,10 +29,10 @@ def preprocess_data(new_data):
 
     # 1.4 数据清洗
     cleaning_rules = [
-        ('height', (100, 200)),
-        ('weight', (40, 200)),
-        ('systolic_b_pressure', (90, 250)),
-        ('diastolic_b_pressure', (60, 150)),
+        ('height', (50, 200)),
+        ('weight', (20, 200)),
+        ('systolic_b_pressure', (60, 250)),
+        ('diastolic_b_pressure', (35, 150)),
         ('cholesterol', [1, 2, 3]),
         ('glucose', [1, 2, 3]),
         ('gender', [1, 2])
@@ -140,5 +140,6 @@ def predict_cardio_disease(input_data):
     y_pred = model.predict(processed_data)
     y_pred_proba = model.predict_proba(processed_data)
     disease_probability = y_pred_proba[:, 1]
+
 
     return ids, y_pred, disease_probability
